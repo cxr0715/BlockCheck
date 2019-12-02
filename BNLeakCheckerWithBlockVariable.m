@@ -90,6 +90,7 @@
                      }
                  } else if (P == 4) {
                      //根据偏移得到引用外部对象的地址。并转化为OC对象。
+                     // 这里是通过地址偏移去拿的，也可以根据自己构建的struct-Block_byref_block去取对应的NSObject
                      void *aaaa = *((void **)(blockmemoryAddr + 32));
                      void *bbbb = *((void **)(aaaa + 40));
                      id refObj =  (__bridge id) bbbb;
