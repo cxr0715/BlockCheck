@@ -1,3 +1,3 @@
-#BNLeakCheckerWithBlockVariable
+# BNLeakCheckerWithBlockVariable
 
 一个可以检测block中是否有循环引用的方法，无论是strong对象还是__block对象
