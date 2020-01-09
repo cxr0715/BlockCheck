@@ -17,6 +17,7 @@ struct Block_literal_BN {
     void (* invoke)(void *, ...);
     struct Block_descriptor_BN* descriptor;
     // imported variables
+    void *capture;
 };
 
 struct BN_Block_descriptor_1 {
@@ -44,7 +45,7 @@ struct Block_byref_block {
     uint32_t size;
     void *byref_keep;
     void *byref_dispose;
-    NSObject *object;
+    void *capture;
 };
 
 enum { // Flags from BlockLiteral
@@ -111,6 +112,5 @@ enum {
 
 @interface BNLeakCheckerWithBlockVariable : NSObject
 
-+ (BOOL)checkBlockWithVariable:(id)callBack retainObserver:(id)observer;
-
++ (NSMutableSet *)getBlockStrongLayout_new:(void *)block;
 @end
